@@ -32,7 +32,7 @@ public class WordCountApp {
                 // 3 - flatmap values split by space
                 .flatMapValues(textLine -> Arrays.asList(textLine.split("\\W+")))
                 // 4 - select key to apply a key (we discard the old key)
-                .selectKey((key, word) -> word) 
+                .selectKey((key, word) -> word)
                 // 5 - group by key before aggregation
                 .groupByKey()
                 // 6 - count occurrences
